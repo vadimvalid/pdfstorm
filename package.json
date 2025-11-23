@@ -1,0 +1,24 @@
+{
+  "name": "pdfstorm",
+  "version": "1.0.0",
+  "description": "PDFStorm frontend project",
+  "author": "Vadim Gadjimuradov",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node build.js && echo 'Build complete! Check dist/index.html'",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.0.0",
+    "sharp": "^0.34.5",
+    "vite": "^5.4.0",
+    "vite-plugin-imagemin": "^0.6.1",
+    "vite-plugin-nunjucks": "^0.2.0",
+    "vite-plugin-static-copy": "^1.0.2"
+  },
+  "dependencies": {
+    "flowbite": "^2.5.2",
+    "nunjucks": "^3.2.4"
+  }
+}

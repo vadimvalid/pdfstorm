@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная - PDFStorm</title>
+    <link rel="stylesheet" href="/resources/css/main.css">
+  </head>
+
+  <body class="bg-white text-black flex flex-col min-h-screen">
+    {% include "components/header.html" %}
+
+    <main class="grow">
+      <!-- Hero Section -->
+      {% include "components/hero.html" %}
+
+      <!-- Tools Section -->
+      {% include "components/tools.html" %}
+
+      <!-- Description Section -->
+      {% include "components/description.html" %}
+
+      <!-- Services Section -->
+      {% include "components/services.html" %}
+
+    </main>
+
+    {% include "components/footer.html" %}
+
+    <script type="module" src="/resources/js/main.js"></script>
+  </body>
+
+</html>

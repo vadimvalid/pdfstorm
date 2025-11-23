@@ -1,0 +1,28 @@
+{# Base template for extending #}
+<!DOCTYPE html>
+<html lang="ru">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}PDFStorm{% endblock %}</title>
+    <link rel="stylesheet" href="/resources/css/main.css">
+  </head>
+
+  <body class="bg-white text-gray-900 flex flex-col min-h-screen">
+    {% block header %}
+    {% include "components/header.html" %}
+    {% endblock %}
+
+    <main class="grow">
+      {% block content %}{% endblock %}
+    </main>
+
+    {% block footer %}
+    {% include "components/footer.html" %}
+    {% endblock %}
+
+    <script type="module" src="/resources/js/main.js"></script>
+  </body>
+
+</html>

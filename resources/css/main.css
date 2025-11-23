@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #1058CB;
+  --color-header: #3A3D5E;
+  --color-white: #FFFFFF;
+  --color-secondary: #11D519;
+  --color-black: #000000;
+  --color-link: #2549E0;
+  --color-grey: #7F8193;
+}
+
+/* Custom styles */
+
+.container {
+  max-width: 1376px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+

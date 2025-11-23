@@ -1,0 +1,32 @@
+<!-- Tool Card -->
+<article class="bg-white rounded-lg shadow-md p-6 flex flex-col h-full relative"
+  aria-labelledby="tool-{{ tool.id }}-title">
+  <div class="absolute top-4 right-4 w-12 h-12 rounded-lg flex items-center justify-center {{ tool.colorClass }}"
+    aria-hidden="true" role="presentation">
+    <img src="/images/{{ tool.icon }}" alt="" class="w-8 h-8" aria-hidden="true">
+  </div>
+
+  <h3 id="tool-{{ tool.id }}-title" class="text-xl font-bold {{ tool.textColor }} mb-4 pr-16">
+    {{ tool.title }}
+  </h3>
+
+  {% if tool.description %}
+  <p class="text-grey mb-4 text-sm">
+    {{ tool.description }}
+  </p>
+  {% endif %}
+
+  {% if tool.tools and tool.tools.length > 0 %}
+  <ul class="space-y-2 mt-auto" aria-label="Инструменты категории {{ tool.title }}">
+    {% for toolItem in tool.tools %}
+    <li>
+      <a href="#"
+        class="flex items-center gap-2 text-sm text-grey hover:{{ tool.textColor }} transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1 rounded">
+        <span class="w-1.5 h-1.5 rounded-full {{ tool.bgColor }}" aria-hidden="true"></span>
+        <span>{{ toolItem }}</span>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</article>

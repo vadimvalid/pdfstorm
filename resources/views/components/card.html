@@ -1,0 +1,23 @@
+{# 
+  Card component
+  Usage: 
+  {% set card = { title: "Title", description: "Description", image: "/path/to/image.jpg" } %}
+  {% include "components/card.html" %}
+#}
+<article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+  {% if card.image %}
+  <div class="aspect-video bg-gray-200 overflow-hidden">
+    <img src="{{ card.image }}" alt="{{ card.title or '' }}" class="w-full h-full object-cover">
+  </div>
+  {% endif %}
+  <div class="p-6">
+    {% if card.title %}
+    <h3 class="text-xl font-semibold mb-2 text-gray-900">{{ card.title }}</h3>
+    {% endif %}
+    {% if card.description %}
+    <p class="text-gray-600 mb-4">{{ card.description }}</p>
+    {% endif %}
+    {% block card_content %}{% endblock %}
+  </div>
+</article>
+
