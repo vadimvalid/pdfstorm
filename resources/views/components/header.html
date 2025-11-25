@@ -1,36 +1,39 @@
 <header class="bg-white border-t border-grey sticky top-0 z-50">
   <nav class="container mx-auto px-6 md:px-12 py-4">
-    <div class="flex items-center justify-between">
+    <div class="flex flex-wrap justify-between items-center">
       <div class="flex items-center gap-3">
         <a href="/" class="flex items-center gap-3">
-          <img src="/images/logo.svg" alt="PDFStorm" class="h-8 w-auto">
-          <span class="text-xl font-semibold text-primary uppercase tracking-tight">
-            <span class="font-bold">PDFS</span><span class="font-normal">TORM</span>
+          <img src="/images/logo.svg" alt="PDFStorm" class="h-8 w-auto" />
+          <span
+            class="text-xl font-semibold text-primary uppercase tracking-tight"
+          >
+            <span class="font-bold">PDFS</span
+            ><span class="font-normal">TORM</span>
           </span>
         </a>
       </div>
 
-      <div class="hidden md:flex items-center gap-8">
-        <a href="#" class="text-link hover:text-primary transition-colors font-medium">Word в PDF</a>
-        <a href="#" class="text-link hover:text-primary transition-colors font-medium">Разделить PDF</a>
-        <a href="#" class="text-link hover:text-primary transition-colors font-medium">Сжать PDF</a>
-        <a href="#" class="text-link hover:text-primary transition-colors font-medium">PDF в Word</a>
-      </div>
-
       <div class="flex items-center gap-4">
         <div class="relative">
-          <button type="button" id="language-dropdown-button" data-dropdown-toggle="language-dropdown"
-            class="flex items-center gap-1.5 w-10 h-10 md:w-auto md:h-auto md:px-0 md:py-0 bg-secondary md:bg-transparent border-0 rounded-full text-white md:text-secondary font-medium uppercase text-sm transition-colors">
+          <button
+            type="button"
+            id="language-dropdown-button"
+            data-dropdown-toggle="language-dropdown"
+            class="flex items-center gap-1.5 w-10 h-10 md:w-auto md:h-auto md:px-0 md:py-0 border-0 text-secondary font-medium uppercase text-sm transition-colors"
+          >
             <span>RU</span>
-            <div class="flex items-center justify-center w-6 h-6 md:w-8 md:h-8 bg-secondary rounded-full">
+            <div
+              class="flex items-center justify-center shrink-0 w-5 h-5 md:w-8 md:h-8 bg-secondary rounded-full"
+            >
               <svg class="w-3 h-3 fill-white" viewBox="0 0 12 12">
                 <path d="M6 8L2 4h8L6 8z" />
               </svg>
             </div>
           </button>
-
-          <div id="language-dropdown"
-            class="hidden z-10 bg-white divide-y divide-grey rounded-lg shadow-lg w-32 border border-grey absolute right-0 mt-2">
+          <div
+            id="language-dropdown"
+            class="hidden z-10 bg-white divide-y divide-grey rounded-lg shadow-lg w-32 border border-grey absolute right-0 mt-2"
+          >
             <ul class="py-2 text-sm text-grey">
               <li>
                 <a href="#" class="block px-4 py-2 hover:bg-grey/10">RU</a>
@@ -42,30 +45,74 @@
           </div>
         </div>
 
-        <button type="button" class="md:hidden p-2 text-grey" data-drawer-target="mobile-menu"
-          data-drawer-toggle="mobile-menu" aria-controls="mobile-menu">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        <button
+          data-collapse-toggle="mobile-menu"
+          type="button"
+          class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+        >
+          <span class="sr-only">Open main menu</span>
+          <svg
+            class="w-6 h-6"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+          <svg
+            class="hidden w-6 h-6"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+              clip-rule="evenodd"
+            ></path>
           </svg>
         </button>
       </div>
+
+      <ul
+        id="mobile-menu"
+        class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1 gap-8"
+      >
+        <li>
+          <a
+            href="#"
+            class="text-link hover:text-primary transition-colors font-medium"
+            >Word в PDF</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            class="text-link hover:text-primary transition-colors font-medium"
+            >Разделить PDF</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            class="text-link hover:text-primary transition-colors font-medium"
+            >Сжать PDF</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            class="text-link hover:text-primary transition-colors font-medium"
+            >PDF в Word</a
+          >
+        </li>
+      </ul>
     </div>
   </nav>
-
-  <div id="mobile-menu" class="hidden fixed top-0 left-0 z-40 h-screen p-4 overflow-y-auto bg-white w-64">
-    <div class="flex items-center justify-between mb-4">
-      <span class="text-xl font-bold">Меню</span>
-      <button type="button" class="text-grey" data-drawer-hide="mobile-menu">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-        </svg>
-      </button>
-    </div>
-    <nav class="space-y-4">
-      <a href="#" class="block text-link hover:text-primary font-medium">Word в PDF</a>
-      <a href="#" class="block text-link hover:text-primary font-medium">Разделить PDF</a>
-      <a href="#" class="block text-link hover:text-primary font-medium">Сжать PDF</a>
-      <a href="#" class="block text-link hover:text-primary font-medium">PDF в Word</a>
-    </nav>
-  </div>
 </header>
