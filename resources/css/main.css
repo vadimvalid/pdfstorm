@@ -11,6 +11,8 @@
   --color-grey-light: #e5e6e6;
   --color-subtitle: #222;
   --color-green: #00a007;
+  --color-blue-light: #edf4ff;
+  --color-bg-blue: rgba(231, 239, 245, 0.5);
   --image-gradient: 180deg, #edf4ff 0%, #fff 100%;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";

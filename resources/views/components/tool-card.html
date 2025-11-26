@@ -1,29 +1,38 @@
 <!-- Tool Card -->
-<article class="bg-white rounded-lg shadow-md p-6 flex flex-col h-full relative"
-  aria-labelledby="tool-{{ tool.id }}-title">
-  <div class="absolute top-4 right-4 w-12 h-12 rounded-lg flex items-center justify-center {{ tool.colorClass }}"
-    aria-hidden="true" role="presentation">
-    <img src="/images/{{ tool.icon }}" alt="" class="w-8 h-8" aria-hidden="true">
+<article
+  class="bg-white rounded-[18px] shadow-md flex flex-col relative"
+  aria-labelledby="tool-{{ tool.id }}-title"
+>
+  <div
+    class="absolute top-0 right-0 w-24 h-24 rounded-tr-2xl rounded-bl-2xl flex items-center justify-center {{ tool.colorClass }}"
+    aria-hidden="true"
+    role="presentation"
+  >
+    <img
+      src="/images/{{ tool.icon }}"
+      alt=""
+      class="w-8 h-8 lg:w-11 lg:h-14"
+      aria-hidden="true"
+    />
   </div>
 
-  <h3 id="tool-{{ tool.id }}-title" class="text-xl font-bold {{ tool.textColor }} mb-4 pr-16">
-    {{ tool.title }}
-  </h3>
+  <div class="flex flex-col gap-2 py-8 pr-28 pl-9">
+    <h3 id="tool-{{ tool.id }}-title" class="text-2xl font-bold text-header">
+      {{ tool.title }}
+    </h3>
 
-  {% if tool.description %}
-  <p class="text-grey mb-4 text-sm">
-    {{ tool.description }}
-  </p>
-  {% endif %}
+    {% if tool.description %}
+    <p class="text-grey text-lg">{{ tool.description }}</p>
+    {% endif %}
+  </div>
 
   {% if tool.tools and tool.tools.length > 0 %}
-  <ul class="space-y-2 mt-auto" aria-label="Инструменты категории {{ tool.title }}">
+  <ul class="space-y-2 m-0" aria-label="Инструменты категории {{ tool.title }}">
     {% for toolItem in tool.tools %}
-    <li>
-      <a href="#"
-        class="flex items-center gap-2 text-sm text-grey hover:{{ tool.textColor }} transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1 rounded">
-        <span class="w-1.5 h-1.5 rounded-full {{ tool.bgColor }}" aria-hidden="true"></span>
-        <span>{{ toolItem }}</span>
+    <li class="py-3 px-9 m-0 lg:px-11 even:bg-bg-blue">
+      <a href="#" class="flex items-center gap-2 text-lg font-medium">
+        <img src="/images/{{ toolItem.icon or tool.listIcon }}" alt="icon" />
+        <span>{{ toolItem.name or toolItem }}</span>
       </a>
     </li>
     {% endfor %}

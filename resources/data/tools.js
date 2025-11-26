@@ -1,150 +1,149 @@
 export const tools = [
   {
     id: "word-to-pdf",
-    icon: "card-doc.svg",
+    icon: "card-pdf.svg",
     title: "Word в PDF",
     description: "Конвертация текстовых документов в PDF.",
-    colorClass: "bg-primary",
+    colorClass: "bg-[#D2E4FF]",
     textColor: "text-primary",
-    bgColor: "bg-primary",
+    bgColor: "bg-[#D2E4FF]",
     tools: [
-      "Конвертация DOC в PDF",
-      "Конвертация DOCX в PDF",
-      "Конвертация ODT в PDF",
-      "Конвертация RTF в PDF"
-    ]
+      { name: "Конвертация DOC в PDF", icon: "icon-list-1.svg" },
+      { name: "Конвертация DOCX в PDF", icon: "icon-list-1.svg" },
+      { name: "Конвертация ODT в PDF", icon: "icon-list-1.svg" },
+      { name: "Конвертация RTF в PDF", icon: "icon-list-1.svg" },
+    ],
   },
   {
     id: "pdf-to-word",
-    icon: "card-pdf.svg",
+    icon: "card-doc.svg",
     title: "PDF в Word",
     description: "Конвертация PDF в редактируемые документы.",
-    colorClass: "bg-primary",
+    colorClass: "bg-[#B5E8FF]",
     textColor: "text-primary",
-    bgColor: "bg-primary",
+    bgColor: "bg-[#B5E8FF]",
     tools: [
-      "Конвертация PDF в DOC",
-      "Конвертация PDF в DOCX",
-      "Конвертация PDF в ODT",
-      "Конвертация PDF в RTF"
-    ]
+      { name: "Конвертация PDF в DOC", icon: "icon-list-2.svg" },
+      { name: "Конвертация PDF в DOCX", icon: "icon-list-2.svg" },
+      { name: "Конвертация PDF в ODT", icon: "icon-list-2.svg" },
+      { name: "Конвертация PDF в RTF", icon: "icon-list-2.svg" },
+    ],
   },
   {
     id: "excel-to-pdf",
     icon: "card-pdf-green.svg",
     title: "Excel в PDF",
     description: "Конвертация файлов таблиц в PDF.",
-    colorClass: "bg-secondary",
+    colorClass: "bg-[#C1FAC3]",
     textColor: "text-secondary",
-    bgColor: "bg-secondary",
+    bgColor: "bg-[#C1FAC3]",
     tools: [
-      "Конвертация XLS в PDF",
-      "Конвертация XLSX в PDF",
-      "Конвертация ODS в PDF"
-    ]
+      { name: "Конвертация XLS в PDF", icon: "icon-list-3.svg" },
+      { name: "Конвертация XLSX в PDF", icon: "icon-list-3.svg" },
+      { name: "Конвертация ODS в PDF", icon: "icon-list-3.svg" },
+    ],
   },
   {
     id: "powerpoint-to-pdf",
     icon: "card-pdf-orange.svg",
     title: "PowerPoint в PDF",
     description: "Конвертация файлов презентаций в PDF.",
-    colorClass: "bg-orange-500",
+    colorClass: "bg-[#FFDECA]",
     textColor: "text-orange-600",
-    bgColor: "bg-orange-500",
+    bgColor: "bg-[#FFDECA]",
     tools: [
-      "Конвертация PPT в PDF",
-      "Конвертация PPTX в PDF",
-      "Конвертация ODP в PDF"
-    ]
+      { name: "Конвертация PPT в PDF", icon: "icon-list-4.svg" },
+      { name: "Конвертация PPTX в PDF", icon: "icon-list-4.svg" },
+      { name: "Конвертация ODP в PDF", icon: "icon-list-4.svg" },
+    ],
   },
   {
     id: "ebooks",
-    icon: "card-pdf.svg",
+    icon: "card-box.svg",
     title: "Электронные книги",
     description: "Конвертация электронных книг из/в PDF.",
-    colorClass: "bg-purple-500",
+    colorClass: "bg-[#EADCFF]",
     textColor: "text-purple-600",
-    bgColor: "bg-purple-500",
+    bgColor: "bg-[#EADCFF]",
     tools: [
-      "Конвертация DJVU в PDF",
-      "Конвертация PDF в DJVU",
-      "Конвертация EPUB в PDF",
-      "Конвертация PDF в EPUB",
-      "Конвертация FB2 в PDF",
-      "Конвертация PDF в FB2"
-    ]
+      { name: "Конвертация DJVU в PDF", icon: "icon-list-5.svg" },
+      { name: "Конвертация PDF в DJVU", icon: "icon-list-5.svg" },
+      { name: "Конвертация EPUB в PDF", icon: "icon-list-5.svg" },
+      { name: "Конвертация PDF в EPUB", icon: "icon-list-5.svg" },
+      { name: "Конвертация FB2 в PDF", icon: "icon-list-5.svg" },
+      { name: "Конвертация PDF в FB2", icon: "icon-list-5.svg" },
+    ],
   },
   {
     id: "images-to-pdf",
     icon: "card-pdf-red.svg",
     title: "Картинки в PDF",
     description: "Конвертация изображений в PDF.",
-    colorClass: "bg-red-500",
+    colorClass: "bg-[#FACCC1]",
     textColor: "text-red-600",
-    bgColor: "bg-red-500",
+    bgColor: "bg-[#FACCC1]",
     tools: [
-      "Конвертация JPEG в PDF",
-      "Конвертация PNG в PDF"
-    ]
+      { name: "Конвертация JPEG в PDF", icon: "icon-list-6.svg" },
+      { name: "Конвертация PNG в PDF", icon: "icon-list-6.svg" },
+    ],
   },
   {
     id: "edit-pdf",
-    icon: "card-pdf-green.svg",
+    icon: "card-edit.svg",
     title: "Редактировать PDF",
     description: "Изменение PDF файла.",
-    colorClass: "bg-secondary",
+    colorClass: "bg-[#C1FAF0]",
     textColor: "text-secondary",
-    bgColor: "bg-secondary",
+    bgColor: "bg-[#C1FAF0]",
     tools: [
-      "Организовать PDF",
-      "Повернуть PDF",
-      "Удаление страниц из PDF",
-      "Объединение PDF файлов",
-      "Разделение PDF",
-      "Извлечение страниц из PDF"
-    ]
+      { name: "Организовать PDF", icon: "icon-list-7.svg" },
+      { name: "Повернуть PDF", icon: "icon-list-7.svg" },
+      { name: "Удаление страниц из PDF", icon: "icon-list-7.svg" },
+      { name: "Объединение PDF файлов", icon: "icon-list-7.svg" },
+      { name: "Разделение PDF", icon: "icon-list-7.svg" },
+      { name: "Извлечение страниц из PDF", icon: "icon-list-7.svg" },
+    ],
   },
   {
     id: "pdf-to-images",
-    icon: "card-pdf.svg",
+    icon: "card-picture.svg",
     title: "PDF в картинки",
     description: "Конвертация PDF в изображения.",
-    colorClass: "bg-yellow-500",
+    colorClass: "bg-[#FFFCD2]",
     textColor: "text-yellow-600",
-    bgColor: "bg-yellow-500",
+    bgColor: "bg-[#FFFCD2]",
     tools: [
-      "Конвертация PDF в JPEG",
-      "Конвертация PDF в PNG"
-    ]
+      { name: "Конвертация PDF в JPEG", icon: "icon-list-8.svg" },
+      { name: "Конвертация PDF в PNG", icon: "icon-list-8.svg" },
+    ],
   },
   {
     id: "other-tools",
     icon: "icon-tools.svg",
     title: "Другие инструменты",
     description: null,
-    colorClass: "bg-grey",
+    colorClass: "bg-[#E7EFF5]",
     textColor: "text-grey",
-    bgColor: "bg-grey",
+    bgColor: "bg-[#E7EFF5]",
     tools: [
-      "Распознавание текста в PDF",
-      "Сделать PDF черно-белым",
-      "Веб-страница в PDF",
-      "Конвертация PDF в PDF/A",
-      "Сжатие PDF"
-    ]
+      { name: "Распознавание текста в PDF", icon: "icon-list-9.svg" },
+      { name: "Сделать PDF черно-белым", icon: "icon-list-9.svg" },
+      { name: "Веб-страница в PDF", icon: "icon-list-9.svg" },
+      { name: "Конвертация PDF в PDF/A", icon: "icon-list-9.svg" },
+      { name: "Сжатие PDF", icon: "icon-list-9.svg" },
+    ],
   },
   {
     id: "pdf-security",
     icon: "icon-private.svg",
     title: "Безопасность PDF",
     description: null,
-    colorClass: "bg-grey",
+    colorClass: "bg-[#E7EFF5]",
     textColor: "text-grey",
-    bgColor: "bg-grey",
+    bgColor: "bg-[#E7EFF5]",
     tools: [
-      "Установка пароля в PDF",
-      "Удаление пароля из PDF"
-    ]
-  }
+      { name: "Установка пароля в PDF", icon: "icon-list-10.svg" },
+      { name: "Удаление пароля из PDF", icon: "icon-list-10.svg" },
+    ],
+  },
 ];
-

@@ -1,14 +1,17 @@
 <!-- Tools Section -->
-<section class="py-12 md:py-16 bg-primary/10" aria-labelledby="tools-heading">
+<section
+  class="pt-8 pb-14 md:pt-12 md:pb-10 bg-blue-light"
+  aria-labelledby="tools-heading"
+>
   <div class="container mx-auto px-6 md:px-12">
-    <h2 id="tools-heading" class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12 text-black visually-hidden">
-      Все инструменты
-    </h2>
+    <h2 id="tools-heading" class="visually-hidden">Все инструменты</h2>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" role="list">
-      {% for tool in tools %}
-      {% include "components/tool-card.html" %}
-      {% endfor %}
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-start lg:gap-x-6 lg:gap-y-8"
+      role="list"
+    >
+      {% for tool in tools %} {% include "components/tool-card.html" %} {%
+      endfor %}
     </div>
   </div>
 </section>
