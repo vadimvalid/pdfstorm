@@ -2,8 +2,10 @@
 
 @theme {
   --color-primary: #1058cb;
+  --color-primary-hover: #1148a2;
   --color-header: #3a3d5e;
   --color-white: #ffffff;
+  --color-white-hover: #c5d9f9;
   --color-secondary: #11d519;
   --color-black: #000000;
   --color-link: #2549e0;
@@ -16,6 +18,8 @@
   --image-gradient: 180deg, #edf4ff 0%, #fff 100%;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --hero-size: calc(100% + 128px);
+  --hero-size-big: calc(100% + 400px);
 }
 
 /* Custom styles */
