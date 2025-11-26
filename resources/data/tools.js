@@ -7,6 +7,7 @@ export const tools = [
     colorClass: "bg-[#D2E4FF]",
     textColor: "text-primary",
     bgColor: "bg-[#D2E4FF]",
+    hoverBg: "bg-[#3581F2]",
     tools: [
       { name: "Конвертация DOC в PDF", icon: "icon-list-1.svg" },
       { name: "Конвертация DOCX в PDF", icon: "icon-list-1.svg" },
@@ -22,6 +23,7 @@ export const tools = [
     colorClass: "bg-[#B5E8FF]",
     textColor: "text-primary",
     bgColor: "bg-[#B5E8FF]",
+    hoverBg: "bg-[#00A8F7]",
     tools: [
       { name: "Конвертация PDF в DOC", icon: "icon-list-2.svg" },
       { name: "Конвертация PDF в DOCX", icon: "icon-list-2.svg" },
@@ -37,6 +39,7 @@ export const tools = [
     colorClass: "bg-[#C1FAC3]",
     textColor: "text-secondary",
     bgColor: "bg-[#C1FAC3]",
+    hoverBg: "bg-[#05B10C]",
     tools: [
       { name: "Конвертация XLS в PDF", icon: "icon-list-3.svg" },
       { name: "Конвертация XLSX в PDF", icon: "icon-list-3.svg" },
@@ -51,6 +54,7 @@ export const tools = [
     colorClass: "bg-[#FFDECA]",
     textColor: "text-orange-600",
     bgColor: "bg-[#FFDECA]",
+    hoverBg: "bg-[#E46700]",
     tools: [
       { name: "Конвертация PPT в PDF", icon: "icon-list-4.svg" },
       { name: "Конвертация PPTX в PDF", icon: "icon-list-4.svg" },
@@ -65,6 +69,7 @@ export const tools = [
     colorClass: "bg-[#EADCFF]",
     textColor: "text-purple-600",
     bgColor: "bg-[#EADCFF]",
+    hoverBg: "bg-[#8E43FF]",
     tools: [
       { name: "Конвертация DJVU в PDF", icon: "icon-list-5.svg" },
       { name: "Конвертация PDF в DJVU", icon: "icon-list-5.svg" },
@@ -82,6 +87,7 @@ export const tools = [
     colorClass: "bg-[#FACCC1]",
     textColor: "text-red-600",
     bgColor: "bg-[#FACCC1]",
+    hoverBg: "bg-[#D51B11]",
     tools: [
       { name: "Конвертация JPEG в PDF", icon: "icon-list-6.svg" },
       { name: "Конвертация PNG в PDF", icon: "icon-list-6.svg" },
@@ -95,6 +101,7 @@ export const tools = [
     colorClass: "bg-[#C1FAF0]",
     textColor: "text-secondary",
     bgColor: "bg-[#C1FAF0]",
+    hoverBg: "bg-[#00B9A9]",
     tools: [
       { name: "Организовать PDF", icon: "icon-list-7.svg" },
       { name: "Повернуть PDF", icon: "icon-list-7.svg" },
@@ -112,6 +119,7 @@ export const tools = [
     colorClass: "bg-[#FFFCD2]",
     textColor: "text-yellow-600",
     bgColor: "bg-[#FFFCD2]",
+    hoverBg: "bg-[#C4B100]",
     tools: [
       { name: "Конвертация PDF в JPEG", icon: "icon-list-8.svg" },
       { name: "Конвертация PDF в PNG", icon: "icon-list-8.svg" },
@@ -125,6 +133,7 @@ export const tools = [
     colorClass: "bg-[#E7EFF5]",
     textColor: "text-grey",
     bgColor: "bg-[#E7EFF5]",
+    hoverBg: "bg-[#6A89A0]",
     tools: [
       { name: "Распознавание текста в PDF", icon: "icon-list-9.svg" },
       { name: "Сделать PDF черно-белым", icon: "icon-list-9.svg" },
@@ -141,6 +150,7 @@ export const tools = [
     colorClass: "bg-[#E7EFF5]",
     textColor: "text-grey",
     bgColor: "bg-[#E7EFF5]",
+    hoverBg: "bg-[#6A89A0]",
     tools: [
       { name: "Установка пароля в PDF", icon: "icon-list-10.svg" },
       { name: "Удаление пароля из PDF", icon: "icon-list-10.svg" },

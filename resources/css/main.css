@@ -64,3 +64,44 @@ body {
     @apply text-green;
   }
 }
+
+/* Tool card hover styles */
+.tool-card {
+  --hover-color: var(--hover-bg-color, #ffffff);
+}
+
+.tool-card[data-hover-bg*="#D2E4FF"]:hover {
+  background-color: #3581f2;
+}
+
+.tool-card[data-hover-bg*="#B5E8FF"]:hover {
+  background-color: #00a8f7;
+}
+
+.tool-card[data-hover-bg*="#C1FAC3"]:hover {
+  background-color: #05b10c;
+}
+
+.tool-card[data-hover-bg*="#FFDECA"]:hover {
+  background-color: #e46700;
+}
+
+.tool-card[data-hover-bg*="#EADCFF"]:hover {
+  background-color: #8e43ff;
+}
+
+.tool-card[data-hover-bg*="#FACCC1"]:hover {
+  background-color: #d51b11;
+}
+
+.tool-card[data-hover-bg*="#C1FAF0"]:hover {
+  background-color: #00b9a9;
+}
+
+.tool-card[data-hover-bg*="#FFFCD2"]:hover {
+  background-color: #c4b100;
+}
+
+.tool-card[data-hover-bg*="#E7EFF5"]:hover {
+  background-color: #6a89a0;
+}
