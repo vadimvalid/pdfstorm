@@ -9,6 +9,9 @@
   --color-link: #2549e0;
   --color-grey: #7f8193;
   --color-grey-light: #e5e6e6;
+  --color-subtitle: #222;
+  --color-green: #00a007;
+  --image-gradient: 180deg, #edf4ff 0%, #fff 100%;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
@@ -34,4 +37,27 @@ body {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
+}
+
+@layer base {
+  [role="listitem"] ol li::marker {
+    @apply text-green;
+  }
+
+  [role="listitem"] ul {
+    @apply pl-3;
+  }
+
+  [role="listitem"] ul,
+  [role="listitem"] li {
+    list-style-type: "-";
+  }
+
+  [role="listitem"] li {
+    @apply pl-2;
+  }
+
+  [role="listitem"] ul li::marker {
+    @apply text-green;
+  }
 }
