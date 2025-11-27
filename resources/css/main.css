@@ -20,26 +20,27 @@
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --hero-size: calc(100% + 128px);
   --hero-size-big: calc(100% + 400px);
-  
+
   /* Tool card colors - for use in Tailwind classes like bg-tool-blue-light */
-  --color-tool-blue-light: #D2E4FF;
-  --color-tool-blue: #3581F2;
-  --color-tool-cyan-light: #B5E8FF;
-  --color-tool-cyan: #00A8F7;
-  --color-tool-green-light: #C1FAC3;
-  --color-tool-green: #05B10C;
-  --color-tool-orange-light: #FFDECA;
-  --color-tool-orange: #E46700;
-  --color-tool-purple-light: #EADCFF;
-  --color-tool-purple: #8E43FF;
-  --color-tool-red-light: #FACCC1;
-  --color-tool-red: #D51B11;
-  --color-tool-teal-light: #C1FAF0;
-  --color-tool-teal: #00B9A9;
-  --color-tool-yellow-light: #FFFCD2;
-  --color-tool-yellow: #C4B100;
-  --color-tool-grey-light: #E7EFF5;
-  --color-tool-grey: #6A89A0;
+  --color-tool-blue-light: #d2e4ff;
+  --color-tool-blue: #3581f2;
+  --color-tool-cyan-light: #b5e8ff;
+  --color-tool-cyan: #00a8f7;
+  --color-tool-green-light: #c1fac3;
+  --color-tool-green: #05b10c;
+  --color-tool-orange-light: #ffdeca;
+  --color-tool-orange: #e46700;
+  --color-tool-purple-light: #eadcff;
+  --color-tool-purple: #8e43ff;
+  --color-tool-red-light: #faccc1;
+  --color-tool-red: #d51b11;
+  --color-tool-teal-light: #c1faf0;
+  --color-tool-teal: #00b9a9;
+  --color-tool-yellow-light: #fffcd2;
+  --color-tool-yellow: #c4b100;
+  --color-tool-grey-light: #e7eff5;
+  --color-tool-grey: #6a89a0;
+  --color-tool-item-hover: rgba(0, 0, 0, 0.05);
 }
 
 /* Custom styles */
@@ -76,7 +77,7 @@ body {
   }
 
   [role="listitem"] ul,
-  [role="listitem"] li {
+  [role="listitem"] ul li {
     list-style-type: "-";
   }
 

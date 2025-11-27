@@ -35,7 +35,9 @@
   {% if tool.tools and tool.tools.length > 0 %}
   <ul class="space-y-2 m-0" aria-label="Инструменты категории {{ tool.title }}">
     {% for toolItem in tool.tools %}
-    <li class="py-3 px-9 m-0 lg:px-11 even:bg-bg-blue">
+    <li
+      class="py-3 px-9 m-0 lg:px-11 even:bg-bg-blue even:group-hover:bg-tool-item-hover"
+    >
       <a href="#" class="flex items-center gap-2 text-lg font-medium">
         <img src="/images/{{ toolItem.icon or tool.listIcon }}" alt="icon" />
         <span>{{ toolItem.name or toolItem }}</span>
