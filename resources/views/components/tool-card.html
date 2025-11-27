@@ -1,44 +1,7 @@
 <!-- Tool Card -->
-<style>
-  .tool-card[data-hover-bg*="#3581F2"]:hover {
-    background-color: #3581f2;
-  }
-
-  .tool-card[data-hover-bg*="#00A8F7"]:hover {
-    background-color: #00a8f7;
-  }
-
-  .tool-card[data-hover-bg*="#05B10C"]:hover {
-    background-color: #05b10c;
-  }
-
-  .tool-card[data-hover-bg*="#E46700"]:hover {
-    background-color: #e46700;
-  }
-
-  .tool-card[data-hover-bg*="#8E43FF"]:hover {
-    background-color: #8e43ff;
-  }
-
-  .tool-card[data-hover-bg*="#D51B11"]:hover {
-    background-color: #d51b11;
-  }
-
-  .tool-card[data-hover-bg*="#00B9A9"]:hover {
-    background-color: #00b9a9;
-  }
-
-  .tool-card[data-hover-bg*="#C4B100"]:hover {
-    background-color: #c4b100;
-  }
-
-  .tool-card[data-hover-bg*="#6A89A0"]:hover {
-    background-color: #6a89a0;
-  }
-</style>
 <article
   class="tool-card group bg-white rounded-[18px] shadow-md flex flex-col relative transition-all duration-300"
-  data-hover-bg="{{ tool.bgColor }}"
+  data-hover-color="{{ tool.hoverColor }}"
   aria-labelledby="tool-{{ tool.id }}-title"
 >
   <div

@@ -1,8 +1,9 @@
 import fs from 'fs';
 import path from 'path';
-import { fileURLToPath, pathToFileURL } from 'url';
+import { fileURLToPath } from 'url';
 import sharp from 'sharp';
 import nunjucks from 'nunjucks';
+import { loadTemplateData, updateAssetPaths } from './build-utils.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -16,10 +17,9 @@ if (!fs.existsSync(distDir)) {
 // Process Nunjucks templates and build
 (async () => {
   try {
-    // Load tools data
-    const toolsPath = path.join(__dirname, 'resources/data/tools.js');
-    const toolsModule = await import(pathToFileURL(toolsPath).href);
-    const tools = toolsModule.tools;
+    // Load all template data
+    const dataDir = path.join(__dirname, 'resources/data');
+    const templateData = await loadTemplateData(dataDir);
 
     // Configure Nunjucks
     const viewsPath = path.join(__dirname, 'resources/views');
@@ -30,7 +30,7 @@ if (!fs.existsSync(distDir)) {
 
     // Render the template
     const templatePath = path.join(viewsPath, 'index.html');
-    const html = env.render(templatePath, { tools });
+    const html = env.render(templatePath, templateData);
 
     // Find actual built asset files from Vite
     const assetsDir = path.join(distDir, 'assets');
@@ -50,27 +50,63 @@ if (!fs.existsSync(distDir)) {
       }
     }
 
-    // Update asset paths in HTML - replace development paths with built asset paths
-    const updatedHtml = html
-      // Replace CSS path
-      .replace(/href="[^"]*\/resources\/css\/[^"]*"/g, `href="${cssPath}"`)
-      // Replace JS path
-      .replace(/src="[^"]*\/resources\/js\/[^"]*"/g, `src="${jsPath}"`)
-      // Replace image paths to use relative paths
-      .replace(/src="\/images\/([^"]+)"/g, `src="./images/$1"`)
-      // Also replace any absolute paths that might already exist
-      .replace(/href="\/assets\/([^"]+)"/g, `href="./assets/$1"`)
-      .replace(/src="\/assets\/([^"]+)"/g, `src="./assets/$1"`);
+    // Update asset paths in HTML
+    const updatedHtml = updateAssetPaths(html, cssPath, jsPath);
 
     fs.writeFileSync(path.join(distDir, 'index.html'), updatedHtml);
 
+    // Copy images to dist
+    await copyImages(distDir);
 
     // Optimize images
     await optimizeImages(distDir);
+    
+    console.log('✓ Build completed successfully');
   } catch (error) {
+    console.error('✗ Build failed:', error);
+    console.error(error.stack);
     process.exit(1);
   }
 })();
+
+/**
+ * Copy images from resources/images to dist/images
+ */
+async function copyImages(distDir) {
+  const sourceImagesDir = path.join(__dirname, 'resources/images');
+  const destImagesDir = path.join(distDir, 'images');
+
+  if (!fs.existsSync(sourceImagesDir)) {
+    console.warn('⚠ Images directory not found:', sourceImagesDir);
+    return;
+  }
+
+  // Create destination directory if it doesn't exist
+  if (!fs.existsSync(destImagesDir)) {
+    fs.mkdirSync(destImagesDir, { recursive: true });
+  }
+
+  // Copy all files from source to destination
+  const files = fs.readdirSync(sourceImagesDir);
+  let copiedCount = 0;
+  
+  for (const file of files) {
+    const sourcePath = path.join(sourceImagesDir, file);
+    const destPath = path.join(destImagesDir, file);
+    
+    // Skip directories and hidden files
+    if (fs.statSync(sourcePath).isDirectory() || file.startsWith('.')) {
+      continue;
+    }
+
+    fs.copyFileSync(sourcePath, destPath);
+    copiedCount++;
+  }
+
+  if (copiedCount > 0) {
+    console.log(`✓ Copied ${copiedCount} image(s) to dist/images`);
+  }
+}
 
 /**
  * Optimize images in the dist/images directory
@@ -150,11 +186,10 @@ async function optimizeImages(distDir) {
       if (optimized) {
         const newStats = fs.statSync(filePath);
         const saved = ((originalSize - newStats.size) / originalSize * 100).toFixed(1);
-      } else {
-        console.log('Image already optimized');
+        console.log(`✓ Optimized ${file}: saved ${saved}%`);
       }
     } catch (error) {
-      console.error(error.message);
+      console.error(`✗ Failed to optimize ${file}:`, error.message);
     }
   }
 }

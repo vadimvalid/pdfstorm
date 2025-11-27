@@ -1,31 +1,56 @@
-<!-- Service Card Template -->
-<article class="flex flex-col" aria-labelledby="service-title">
-  <div class="flex items-center gap-4 mb-4">
-    <div class="shrink-0 w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center" aria-hidden="true"
-      role="presentation">
-      <img src="/images/service-1.svg" alt="" class="w-6 h-6" aria-hidden="true">
+<!-- Service Card Component -->
+<article
+  class="flex flex-col gap-5 md:gap-3"
+  role="listitem"
+  aria-labelledby="service-{{ id }}-title"
+>
+  <div class="flex flex-col items-center gap-2 md:flex-row md:gap-5">
+    <div
+      class="shrink-0 w-12 h-12 bg-linear-to-b bg-linear-(--image-gradient) rounded-full flex items-center justify-center md:w-16 md:h-16"
+      aria-hidden="true"
+      role="presentation"
+    >
+      <img
+        src="/images/{{ icon }}"
+        alt=""
+        class="w-6 h-6"
+        aria-hidden="true"
+      />
     </div>
-    <h3 id="service-title" class="text-xl md:text-2xl font-bold text-primary">
-      Название услуги
+    <h3
+      id="service-{{ id }}-title"
+      class="text-2xl md:text-3xl font-medium text-primary"
+    >
+      {{ title }}
     </h3>
   </div>
-
-  <p class="text-grey mb-4">
-    Описание услуги или функции.
-  </p>
-
-  <ol class="space-y-2" aria-label="Шаги процесса">
-    <li class="flex items-start gap-2">
-      <span class="text-secondary font-semibold" aria-hidden="true">1.</span>
-      <span class="text-secondary">Первый шаг</span>
-    </li>
-    <li class="flex items-start gap-2">
-      <span class="text-secondary font-semibold" aria-hidden="true">2.</span>
-      <span class="text-secondary">Второй шаг</span>
-    </li>
-    <li class="flex items-start gap-2">
-      <span class="text-secondary font-semibold" aria-hidden="true">3.</span>
-      <span class="text-secondary">Третий шаг</span>
-    </li>
-  </ol>
+  <div class="flex flex-col gap-3 md:pl-21">
+    {% if description %}
+    <p class="text-subtitle text-lg">
+      {{ description }}
+    </p>
+    {% endif %}
+    {% if list %}
+    {% if listType == "ol" %}
+    <ol
+      class="space-y-2 text-lg list-decimal pl-5"
+      aria-label="{{ listLabel }}"
+    >
+      {% for item in list %}
+      <li>
+        <span>{{ item }}</span>
+      </li>
+      {% endfor %}
+    </ol>
+    {% else %}
+    <ul class="space-y-2 text-lg" aria-label="{{ listLabel }}">
+      {% for item in list %}
+      <li>
+        <span>{{ item }}</span>
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    {% endif %}
+  </div>
 </article>

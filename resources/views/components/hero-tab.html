@@ -1,0 +1,9 @@
+<!-- Hero Tab Component -->
+<a
+  href="{{ href if href else '#' }}"
+  class="px-4 py-2 {% if isActive %}bg-white text-primary border border-primary hover:bg-primary-hover/10{% else %}bg-primary text-white hover:text-white-hover hover:bg-primary-hover{% endif %} rounded-full font-medium text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-colors"
+  {% if isActive %}aria-current="page"{% endif %}
+>
+  {{ label }}
+</a>
+

@@ -20,6 +20,26 @@
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --hero-size: calc(100% + 128px);
   --hero-size-big: calc(100% + 400px);
+  
+  /* Tool card colors - for use in Tailwind classes like bg-tool-blue-light */
+  --color-tool-blue-light: #D2E4FF;
+  --color-tool-blue: #3581F2;
+  --color-tool-cyan-light: #B5E8FF;
+  --color-tool-cyan: #00A8F7;
+  --color-tool-green-light: #C1FAC3;
+  --color-tool-green: #05B10C;
+  --color-tool-orange-light: #FFDECA;
+  --color-tool-orange: #E46700;
+  --color-tool-purple-light: #EADCFF;
+  --color-tool-purple: #8E43FF;
+  --color-tool-red-light: #FACCC1;
+  --color-tool-red: #D51B11;
+  --color-tool-teal-light: #C1FAF0;
+  --color-tool-teal: #00B9A9;
+  --color-tool-yellow-light: #FFFCD2;
+  --color-tool-yellow: #C4B100;
+  --color-tool-grey-light: #E7EFF5;
+  --color-tool-grey: #6A89A0;
 }
 
 /* Custom styles */
@@ -74,38 +94,38 @@ body {
   --hover-color: var(--hover-bg-color, #ffffff);
 }
 
-.tool-card[data-hover-bg*="#D2E4FF"]:hover {
-  background-color: #3581f2;
+.tool-card[data-hover-color="blue"]:hover {
+  background-color: var(--color-tool-blue);
 }
 
-.tool-card[data-hover-bg*="#B5E8FF"]:hover {
-  background-color: #00a8f7;
+.tool-card[data-hover-color="cyan"]:hover {
+  background-color: var(--color-tool-cyan);
 }
 
-.tool-card[data-hover-bg*="#C1FAC3"]:hover {
-  background-color: #05b10c;
+.tool-card[data-hover-color="green"]:hover {
+  background-color: var(--color-tool-green);
 }
 
-.tool-card[data-hover-bg*="#FFDECA"]:hover {
-  background-color: #e46700;
+.tool-card[data-hover-color="orange"]:hover {
+  background-color: var(--color-tool-orange);
 }
 
-.tool-card[data-hover-bg*="#EADCFF"]:hover {
-  background-color: #8e43ff;
+.tool-card[data-hover-color="purple"]:hover {
+  background-color: var(--color-tool-purple);
 }
 
-.tool-card[data-hover-bg*="#FACCC1"]:hover {
-  background-color: #d51b11;
+.tool-card[data-hover-color="red"]:hover {
+  background-color: var(--color-tool-red);
 }
 
-.tool-card[data-hover-bg*="#C1FAF0"]:hover {
-  background-color: #00b9a9;
+.tool-card[data-hover-color="teal"]:hover {
+  background-color: var(--color-tool-teal);
 }
 
-.tool-card[data-hover-bg*="#FFFCD2"]:hover {
-  background-color: #c4b100;
+.tool-card[data-hover-color="yellow"]:hover {
+  background-color: var(--color-tool-yellow);
 }
 
-.tool-card[data-hover-bg*="#E7EFF5"]:hover {
-  background-color: #6a89a0;
+.tool-card[data-hover-color="grey"]:hover {
+  background-color: var(--color-tool-grey);
 }

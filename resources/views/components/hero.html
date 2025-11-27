@@ -32,43 +32,12 @@
       role="navigation"
       aria-label="Фильтры категорий инструментов"
     >
-      <a
-        href="#"
-        class="px-4 py-2 bg-white text-primary border border-primary rounded-full font-medium text-sm hover:bg-primary-hover/10 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-colors"
-        aria-current="page"
-      >
-        Все
-      </a>
-      <a
-        href="#"
-        class="px-4 py-2 bg-primary text-white hover:text-white-hover rounded-full font-medium text-sm hover:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-colors"
-      >
-        Конвертировать
-      </a>
-      <a
-        href="#"
-        class="px-4 py-2 bg-primary text-white hover:text-white-hover rounded-full font-medium text-sm hover:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-colors"
-      >
-        Редактировать
-      </a>
-      <a
-        href="#"
-        class="px-4 py-2 bg-primary text-white hover:text-white-hover rounded-full font-medium text-sm hover:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-colors"
-      >
-        Безопасность
-      </a>
-      <a
-        href="#"
-        class="px-4 py-2 bg-primary text-white hover:text-white-hover rounded-full font-medium text-sm hover:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-colors"
-      >
-        Картинки
-      </a>
-      <a
-        href="#"
-        class="px-4 py-2 bg-primary text-white hover:text-white-hover rounded-full font-medium text-sm hover:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-colors"
-      >
-        Другое
-      </a>
+      {% for tab in tabs %}
+      {% set href = tab.href %}
+      {% set label = tab.label %}
+      {% set isActive = tab.isActive %}
+      {% include "components/hero-tab.html" %}
+      {% endfor %}
     </nav>
   </div>
 </section>
