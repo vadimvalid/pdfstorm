@@ -23,8 +23,6 @@
   --hero-size: calc(100% + 128px);
   --hero-size-middle: calc(100% + 350px);
   --hero-size-big: calc(100% + 450px);
-
-  /* Tool card colors - for use in Tailwind classes like bg-tool-blue-light */
   --color-tool-blue-light: #d2e4ff;
   --color-tool-blue: #3581f2;
   --color-tool-cyan-light: #b5e8ff;
@@ -135,7 +133,6 @@ body {
   background-color: var(--color-tool-grey);
 }
 
-/* SVG icon hover styles */
 .tool-card:hover .tool-icon-path {
   fill: var(--svg-hover-color, #ffffff);
   transition: fill 0.3s ease;
