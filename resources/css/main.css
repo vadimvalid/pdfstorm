@@ -15,11 +15,14 @@
   --color-green: #00a007;
   --color-blue-light: #edf4ff;
   --color-bg-blue: rgba(231, 239, 245, 0.5);
+  --color-bg-list: rgba(231, 239, 245, 1);
+  --color-list: rgba(0, 0, 0, 0.05);
   --image-gradient: 180deg, #edf4ff 0%, #fff 100%;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --hero-size: calc(100% + 128px);
-  --hero-size-big: calc(100% + 400px);
+  --hero-size-middle: calc(100% + 350px);
+  --hero-size-big: calc(100% + 450px);
 
   /* Tool card colors - for use in Tailwind classes like bg-tool-blue-light */
   --color-tool-blue-light: #d2e4ff;
@@ -52,7 +55,7 @@ body {
 }
 
 .container {
-  max-width: 1376px;
+  max-width: 1514px;
 }
 
 .visually-hidden {
@@ -93,6 +96,7 @@ body {
 /* Tool card hover styles */
 .tool-card {
   --hover-color: var(--hover-bg-color, #ffffff);
+  --svg-hover-color: #ffffff;
 }
 
 .tool-card[data-hover-color="blue"]:hover {
@@ -129,4 +133,15 @@ body {
 
 .tool-card[data-hover-color="grey"]:hover {
   background-color: var(--color-tool-grey);
+}
+
+/* SVG icon hover styles */
+.tool-card:hover .tool-icon-path {
+  fill: var(--svg-hover-color, #ffffff);
+  transition: fill 0.3s ease;
+}
+
+.tool-item-icon svg {
+  width: 22px;
+  height: auto;
 }

@@ -143,12 +143,18 @@ async function optimizeImages(distDir) {
       let optimized = false;
 
       if (ext === '.png') {
-        // Optimize PNG
-        const buffer = await sharp(filePath)
+        // Optimize PNG - preserve transparency
+        const image = sharp(filePath);
+        const metadata = await image.metadata();
+        
+        // Ensure alpha channel is preserved if it exists
+        const buffer = await image
+          .ensureAlpha()
           .png({
             quality: 90,
             compressionLevel: 9,
-            adaptiveFiltering: true
+            adaptiveFiltering: true,
+            palette: metadata.hasAlpha ? false : undefined
           })
           .toBuffer();
 

@@ -2,8 +2,25 @@
 <article
   class="tool-card group bg-white rounded-[18px] shadow-md flex flex-col relative transition-all duration-300"
   data-hover-color="{{ tool.hoverColor }}"
+  data-svg-hover-color="{{ tool.svgHoverColor }}"
   aria-labelledby="tool-{{ tool.id }}-title"
 >
+  <div
+    class="absolute top-[30px] right-[78px] w-8 h-8 rounded-full bg-white p-2 shadow-md flex items-center justify-center z-10 opacity-0 group-hover:opacity-100 transition-all duration-300"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="14"
+      fill="none"
+      viewBox="0 0 16 14"
+    >
+      <path
+        fill="#3581F2"
+        d="M7.711 10.332a1.71 1.71 0 0 0 .006 2.413l.006.006a1.71 1.71 0 0 0 2.42-.012l4.86-4.913a1.71 1.71 0 0 0 0-2.407L10.142.507l-.006-.006A1.71 1.71 0 0 0 7.71 2.915L9.687 4.91H1.71A1.708 1.708 0 0 0 .502 7.83c.31.31.738.502 1.21.502h7.977l-1.979 2Z"
+      />
+    </svg>
+  </div>
   <div
     class="absolute top-0 right-0 w-24 h-24 rounded-tr-2xl rounded-bl-2xl flex items-center justify-center {{ tool.colorClass }}"
     aria-hidden="true"
@@ -36,11 +53,15 @@
   <ul class="space-y-2 m-0" aria-label="Инструменты категории {{ tool.title }}">
     {% for toolItem in tool.tools %}
     <li
-      class="py-3 px-9 m-0 lg:px-11 even:bg-bg-blue even:group-hover:bg-tool-item-hover"
+      class="py-3 px-9 m-0 lg:px-11 even:bg-bg-blue odd:group-hover:bg-list group-hover:even:bg-transparent transition-colors"
     >
       <a href="#" class="flex items-center gap-2 text-lg font-medium">
-        <img src="/images/{{ toolItem.icon or tool.listIcon }}" alt="icon" />
-        <span>{{ toolItem.name or toolItem }}</span>
+        <div class="tool-item-icon inline-flex items-center justify-center">
+          {{ toolItem.icon | safe}}
+        </div>
+        <span class="group-hover:text-white"
+          >{{ toolItem.name or toolItem }}</span
+        >
       </a>
     </li>
     {% endfor %}
